@@ -1,0 +1,66 @@
+:root {
+    --accent-blue: #0a84ff;
+    --background-dark: #1c1c1e;
+    --text-color: #ffffff;
+    --light-text: #b0b0b0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-dark); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+.minimal-welcome-container {
+    padding: 40px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.app-name {
+    display: block;
+    color: var(--accent-blue);
+    font-size: 4rem;
+    margin-top: 5px;
+}
+
+.cta-text {
+    font-size: 1.25rem;
+    color: var(--light-text);
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.goals-link {
+    display: inline-block;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.goals-link:hover {
+    color: #ffffff;
+    background-color: var(--accent-blue);
+}
