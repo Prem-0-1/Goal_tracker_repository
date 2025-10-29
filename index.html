@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals • Focus Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="dashboard">
+    
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-card">
+            <h2>Focus Tracker</h2>
+            <p>Enter password to access your goals.</p>
+            <input type="password" id="password-input" placeholder="Password (use '1234')" autofocus>
+            <button id="login-button">Unlock</button>
+            <p id="login-error" class="error-message"></p>
+        </div>
+    </div>
+    
+    <div class="modal-overlay" id="goal-modal-overlay">
+        <div class="modal-card">
+            <h2 id="modal-title">New Goal</h2>
+            <form id="goal-form">
+                <input type="hidden" id="goal-id-input"> 
+                
+                <div class="form-group">
+                    <label for="goal-title-input">Goal Description</label>
+                    <input type="text" id="goal-title-input" required placeholder="e.g., Finish Full-Stack Project">
+                </div>
+                
+                <div class="form-group">
+                    <label for="goal-deadline-input">Deadline</label>
+                    <input type="date" id="goal-deadline-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="goal-progress-input">
+                        <i class="fa-solid fa-chart-simple progress-icon"></i>Progress (%)
+                    </label>
+                    <input type="number" id="goal-progress-input" required min="0" max="100" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="goal-category-input">Category/Importance</label>
+                    <select id="goal-category-input" required>
+                        <option value="High">High Importance</option>
+                        <option value="Medium" selected>Medium Importance</option>
+                        <option value="Low">Low Importance</option>
+                    </select>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" id="cancel-modal-btn">Cancel</button>
+                    <button type="submit" id="save-goal-btn">Save Goal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="app-container" style="display: none;">
+        <div class="browser-frame">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <i class="fa-solid fa-layer-group"></i> Goals
+                    </div>
+                    <nav class="navigation">
+                        <div class="nav-title">Views</div>
+                        <a href="#" class="nav-item active" data-view="all-goals"><i class="fa-solid fa-bullseye"></i> All Goals</a>
+                        <a href="completed.html" class="nav-item" data-view="completed-page"><i class="fa-solid fa-check"></i> Completed</a>
+                        <a href="#" class="nav-item" data-view="deadlines"><i class="fa-solid fa-calendar-check"></i> Deadlines</a>
+                    </nav>
+                    <div class="navigation profile-section">
+                        <div class="nav-title">Sort By</div>
+                        <a href="#" class="nav-item sort-btn" data-sort="importance"><span class="sort-dot"></span> Importance</a>
+                        <a href="#" class="nav-item sort-btn" data-sort="deadline"><span class="sort-dot"></span> Deadline</a>
+                        <a href="#" class="nav-item sort-btn" data-sort="progress"><span class="sort-dot"></span> Progress</a>
+                    </div>
+                    <nav class="navigation">
+                         <div class="nav-title">App Info</div>
+                         <a href="about.html" class="nav-item"><i class="fa-solid fa-info-circle"></i> About</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <a href="#" class="nav-item logout" id="logout-btn"><i class="fa-solid fa-lock"></i> Lock App</a>
+                    </div>
+                </aside>
+
+                <main class="main-content-area" id="main-content">
+                    <section class="top-section">
+                        <h1>Dashboard Overview</h1>
+                        <div class="stat-cards-container">
+                            <div class="stat-card">
+                                <span class="card-label">IN PROGRESS</span>
+                                <span class="card-value color-blue" id="goals-in-progress">0</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="card-label">COMPLETION RATE</span>
+                                <span class="card-value color-green" id="completion-rate">0%</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="card-label">COMPLETED</span>
+                                <span class="card-value color-orange" id="goals-completed">0</span>
+                            </div>
+                            <button class="add-goal-button" id="add-goal-btn">
+                                <i class="fa-solid fa-plus"></i> New Goal
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="goal-cards-list">
+                        <h2 id="goals-list-title">All Goals</h2>
+                        <div class="card-grid" id="goal-cards-container">
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
