@@ -17,23 +17,18 @@ It demonstrates clean front-end architecture, dynamic UI behavior, and modular f
 ---
 
 ## 📁 Folder Structure
-full stack project/
-│
-├── index.html # Main landing page
-├── page.html # Secondary page
-├── completed.html # Completion or confirmation page
-│
-├── style.css # Core global styling
-├── page.css # Page-specific CSS
-│
-├── script.js # JavaScript functionality and interactivity
-│
-└── .git/ # Git version control folder
-
-yaml
-Copy code
-
----
+full stack project/ <br>
+│<br>
+├── index.html # Main landing page<br>
+├── page.html # Secondary page<br>
+├── completed.html # Completion or confirmation page<br>
+│<br>
+├── style.css # Core global styling<br>
+├── page.css # Page-specific CSS<br>
+│<br>
+├── script.js # JavaScript functionality and interactivity<br>
+│<br>
+└── .git/ # Git version control folder<br>
 
 ## ⚙ Technologies Used
 | Technology | Purpose |
